@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokhamad Sheva | Web Profile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            padding: 3px;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                    S
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-indigo-400 transition-colors">
+                    Sheva<span class="text-indigo-500">.dev</span>
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Beranda</a>
+                <a href="#about" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Tentang</a>
+                <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Keahlian</a>
+                <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Proyek</a>
+                <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Kontak</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://github.com/MokhamadSheva" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition flex items-center gap-2">
+                    <i class="fa-brands fa-github text-base"></i> GitHub
+                </a>
+                <a href="#contact" class="px-4 py-2 text-sm font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition">
+                    Hubungi Saya
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Beranda</a>
+            <a href="#about" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Tentang</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Keahlian</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Proyek</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Kontak</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="https://github.com/MokhamadSheva" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-slate-800 text-white font-medium border border-slate-700">
+                    <i class="fa-brands fa-github mr-2"></i> GitHub Profile
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+            <!-- Background Glow Effects -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/20 blur-[130px] -z-10 pointer-events-none rounded-full"></div>
+            <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-600/20 blur-[110px] -z-10 pointer-events-none rounded-full"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                    
+                    <!-- Text Content -->
+                    <div class="flex-1 text-center md:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs sm:text-sm font-medium text-indigo-400 shadow-inner">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Mahasiswa Kelas 2A &bull; Web Developer
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Halo, Saya <br class="hidden sm:inline">
+                            <span class="gradient-text">Mokhamad Sheva</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                            Seorang antusias teknologi dan pengembang web yang fokus membangun antarmuka web modern, responsif, dan estetis menggunakan teknologi web terkini.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                            <a href="#projects" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2">
+                                <i class="fa-solid fa-laptop-code"></i> Lihat Portofolio
+                            </a>
+                            <a href="#contact" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 hover:border-slate-700 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Kontak Saya
+                            </a>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="flex items-center justify-center md:justify-start gap-4 pt-4 text-slate-400">
+                            <a href="https://github.com/MokhamadSheva" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-indigo-500 hover:bg-slate-800 transition-all">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-pink-400 hover:border-pink-500 hover:bg-slate-800 transition-all">
+                                <i class="fa-brands fa-instagram text-lg"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-blue-400 hover:border-blue-500 hover:bg-slate-800 transition-all">
+                                <i class="fa-brands fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="mailto:mokhamadsheva@example.com" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-emerald-400 hover:border-emerald-500 hover:bg-slate-800 transition-all">
+                                <i class="fa-regular fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Photo / Avatar Card -->
+                    <div class="flex-1 flex justify-center">
+                        <div class="relative group">
+                            <!-- Background Neon Glow -->
+                            <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-tilt"></div>
+                            
+                            <!-- Avatar Frame -->
+                            <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-2 bg-slate-900 border-2 border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center">
+                                <img src="img/profile.png" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Mokhamad+Sheva&background=4f46e5&color=fff&size=512&bold=true';" alt="Mokhamad Sheva" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500">
+                            </div>
+
+                            <!-- Floating Badge 1 -->
+                            <div class="absolute -bottom-2 -right-2 bg-slate-900/90 border border-slate-700/80 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl flex items-center gap-2">
+                                <span class="text-xl">💻</span>
+                                <div class="text-left">
+                                    <p class="text-[10px] text-slate-400 font-medium leading-none">Status</p>
+                                    <p class="text-xs font-bold text-slate-200">Web Developer</p>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge 2 -->
+                            <div class="absolute top-2 -left-4 bg-slate-900/90 border border-slate-700/80 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl flex items-center gap-2">
+                                <span class="text-xl">🎓</span>
+                                <div class="text-left">
+                                    <p class="text-[10px] text-slate-400 font-medium leading-none">Mahasiswa</p>
+                                    <p class="text-xs font-bold text-indigo-400">Kelas 2A</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Tentang Saya</h2>
+                    <h3 class="text-3xl font-extrabold text-white">Mengenal Lebih Dekat</h3>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">Membangun pengalaman web yang menarik, fungsional, dan ramah pengguna.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+                            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-regular fa-user text-indigo-400"></i> Biodata Singkat
+                            </h4>
+                            <ul class="space-y-2.5 text-sm text-slate-300">
+                                <li class="flex justify-between border-b border-slate-800/60 pb-2">
+                                    <span class="text-slate-400">Nama Lengkap</span>
+                                    <span class="font-semibold text-slate-100">Mokhamad Sheva</span>
+                                </li>
+                                <li class="flex justify-between border-b border-slate-800/60 pb-2">
+                                    <span class="text-slate-400">Pendidikan / Kelas</span>
+                                    <span class="font-semibold text-indigo-300">Kelas 2A</span>
+                                </li>
+                                <li class="flex justify-between border-b border-slate-800/60 pb-2">
+                                    <span class="text-slate-400">Fokus Bidang</span>
+                                    <span class="font-semibold text-slate-100">Front-End & UI/UX</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-slate-400">Status</span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                        Aktif Belajar & Berkarya
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+                            <h4 class="text-xl font-bold text-white">Profil & Motivasi</h4>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                Saya adalah seorang mahasiswa yang memiliki ketertarikan mendalam dalam dunia pengembangan website dan teknologi informasi. Selalu antusias untuk mempelajari hal-hal baru, mulai dari dasar-dasar pemrograman web seperti HTML, CSS, hingga framework modern seperti <strong class="text-indigo-400">Tailwind CSS</strong> dan ekosistem JavaScript.
+                            </p>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Melalui proyek-proyek praktikum dan eksplorasi mandiri, saya berusaha menghasilkan antarmuka web yang bersih, responsif di segala perangkat, serta mudah digunakan oleh pengguna.
+                            </p>
+                            <div class="pt-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+                                    <div class="text-2xl font-extrabold text-indigo-400">100%</div>
+                                    <div class="text-xs text-slate-400 mt-1">Komitmen</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+                                    <div class="text-2xl font-extrabold text-purple-400">Fast</div>
+                                    <div class="text-xs text-slate-400 mt-1">Responsive</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-center col-span-2 sm:col-span-1">
+                                    <div class="text-2xl font-extrabold text-pink-400">Modern</div>
+                                    <div class="text-xs text-slate-400 mt-1">Tailwind UI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Keahlian & Tools</h2>
+                    <h3 class="text-3xl font-extrabold text-white">Teknologi yang Digunakan</h3>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">Perangkat dan bahasa pemrograman yang dipelajari dan diimplementasikan.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <!-- HTML5 -->
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-orange-500/50 hover:bg-slate-850 transition-all duration-300 text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">HTML5</h4>
+                        <p class="text-[11px] text-slate-400 mt-1">Struktur Web</p>
+                    </div>
+
+                    <!-- CSS3 -->
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-850 transition-all duration-300 text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">CSS3</h4>
+                        <p class="text-[11px] text-slate-400 mt-1">Styling & Layout</p>
+                    </div>
+
+                    <!-- Tailwind CSS -->
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-850 transition-all duration-300 text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Tailwind CSS</h4>
+                        <p class="text-[11px] text-slate-400 mt-1">Utility-First CSS</p>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-yellow-500/50 hover:bg-slate-850 transition-all duration-300 text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">JavaScript</h4>
+                        <p class="text-[11px] text-slate-400 mt-1">Interaktivitas</p>
+                    </div>
+
+                    <!-- Git & GitHub -->
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-red-500/50 hover:bg-slate-850 transition-all duration-300 text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Git & GitHub</h4>
+                        <p class="text-[11px] text-slate-400 mt-1">Version Control</p>
+                    </div>
+
+                    <!-- Responsive Web -->
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-850 transition-all duration-300 text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Responsive</h4>
+                        <p class="text-[11px] text-slate-400 mt-1">Mobile Friendly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Portofolio</h2>
+                    <h3 class="text-3xl font-extrabold text-white">Koleksi Proyek & Tugas</h3>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">Daftar beberapa tugas dan proyek web yang sedang atau telah dikerjakan.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                        <div class="p-6">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Web Profile (Tailwind)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                                Halaman website profil pribadi yang bersih, modern, dan responsif dengan Tailwind CSS dan tema dark mode.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Tailwind CSS</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-950/60 border-t border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Aktif
+                            </span>
+                            <a href="#home" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+                                Preview <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                        <div class="p-6">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-brands fa-bootstrap"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Web Bootstrap Project</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                                Eksplorasi pembuatan web menggunakan komponen framework Bootstrap dan layout grid responsif.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20">Bootstrap</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-950/60 border-t border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-purple-400 font-medium">Praktikum Kelas 2A</span>
+                            <a href="../web-bootstrap/index.html" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1">
+                                Buka <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                        <div class="p-6">
+                            <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Tugas Pemrograman Web</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                                Kumpulan tugas praktikum web dasar meliputi styling CSS, tata letak antarmuka, dan struktur semantik HTML.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-500/10 text-pink-300 border border-pink-500/20">CSS Dasar</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">Tugas Kuliah</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-950/60 border-t border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-slate-400 font-medium">Tugas 2 & 3</span>
+                            <a href="../web-css/index.html" class="text-xs font-semibold text-pink-400 hover:text-pink-300 flex items-center gap-1">
+                                Buka <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Hubungi Saya</h2>
+                    <h3 class="text-3xl font-extrabold text-white">Mari Terhubung!</h3>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">Silakan kirim pesan atau hubungi saya melalui media sosial di bawah ini.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Contact Cards -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <a href="mailto:mokhamadsheva@example.com" class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 flex items-center gap-4 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email</p>
+                                <p class="text-sm font-semibold text-slate-200 group-hover:text-indigo-400 transition-colors">mokhamadsheva@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/MokhamadSheva" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 flex items-center gap-4 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-200 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">GitHub</p>
+                                <p class="text-sm font-semibold text-slate-200 group-hover:text-indigo-400 transition-colors">github.com/MokhamadSheva</p>
+                            </div>
+                        </a>
+
+                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Lokasi</p>
+                                <p class="text-sm font-semibold text-slate-200">Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.'); this.reset();" class="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-xs font-semibold text-slate-300 mb-1.5">Nama Lengkap</label>
+                                    <input type="text" id="name" required placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-slate-300 mb-1.5">Email</label>
+                                    <input type="email" id="email" required placeholder="email@domain.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-xs font-semibold text-slate-300 mb-1.5">Subjek</label>
+                                <input type="text" id="subject" required placeholder="Tujuan pesan..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-xs font-semibold text-slate-300 mb-1.5">Pesan</label>
+                                <textarea id="message" rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm outline-none transition resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 transition-all duration-200 flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-paper-plane"></i> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-xs">
+                    S
+                </div>
+                <span class="text-sm font-semibold text-slate-300">&copy; 2026 Mokhamad Sheva - Kelas 2A. All rights reserved.</span>
+            </div>
+            <p class="text-xs text-slate-500 flex items-center gap-1">
+                Dibuat dengan <i class="fa-solid fa-heart text-red-500 text-[10px]"></i> menggunakan <span class="text-indigo-400 font-medium">Tailwind CSS</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Toggle -->
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
