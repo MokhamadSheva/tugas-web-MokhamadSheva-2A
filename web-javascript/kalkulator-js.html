@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir JavaScript</title>
+</head>
+<body>
+    <h1>Kasir JavaScript</h1>
+
+    <script type="text/javascript">
+      // 1-3. input nama barang, harga, dan jumlah beli
+      let nama = prompt("Masukkan nama barang:");
+      let harga = parseFloat(prompt("Masukkan harga barang:"));
+      let qty = parseInt(prompt("Masukkan jumlah beli (qty):"));
+
+      if (!nama || isNaN(harga) || isNaN(qty)) {
+        document.write("Input tidak valid, silakan refresh halaman dan isi dengan benar.");
+      } else {
+        // hitung total
+        let total = harga * qty;
+
+        // 4. diskon 10% kalau pembelian lebih dari 50.000
+        let diskon = 0;
+        if (total > 50000) {
+          diskon = total * 10 / 100;
+        }
+        let bayar = total - diskon;
+
+        // fungsi bantu untuk format angka (30000 -> 30.000)
+        function rp(angka) {
+          return angka.toLocaleString("id-ID");
+        }
+
+        // fungsi bantu untuk membuat baris struk selebar 40 karakter
+        function baris(teks) {
+          return "+ " + teks.padEnd(36) + " +";
+        }
+        function barisKanan(label, nilai) {
+          return baris(label.padEnd(36 - nilai.length) + nilai);
+        }
+
+        // 5. tampilan struk belanja
+        let garis = "+".repeat(40);
+        let struk = [
+          garis,
+          baris(""),
+          baris("nama".padEnd(12) + "Harga".padStart(9) + "qty".padStart(5) + "total".padStart(10)),
+          baris(nama.substring(0, 12).padEnd(12) + rp(harga).padStart(9) + String(qty).padStart(5) + rp(total).padStart(10)),
+          baris(""),
+          barisKanan("total belanja", rp(total)),
+          barisKanan("diskon", rp(diskon)),
+          barisKanan("pembayaran", rp(bayar)),
+          baris(""),
+          garis
+        ];
+
+        // <pre> supaya spasi dan rata kanan tetap rapi
+        document.write("<pre>" + struk.join("\n") + "</pre>");
+      }
+    </script>
+</body>
+</html>
