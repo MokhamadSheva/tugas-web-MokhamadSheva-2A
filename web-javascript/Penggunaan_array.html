@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penggunaan Array</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Membuat array
+        var siswa = ["ani", "budi", "sigit", "faris"];
+        console.log(siswa); // menampilkan semua data
+        
+        var harga = [1000, 2000, 5000, 3000];
+        console.log(harga[3]); // menampilkan data ke 3
+
+        // merubah isi array
+        siswa[4] = 'anton';
+        console.log(siswa);
+
+        harga[1] = 1500;
+        console.log(harga);
+
+        // menampilkan array dengan perulangan
+        siswa.forEach(function(data){
+            document.write('Nama Siswa adalah ' + data + '<br>');
+        });
+
+
+    </script>
+
+</body>
+</html>
